@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use Endemol\AwsCognitoAuth\CognitoAuthController;
+namespace Endemol\AwsCognitoAuth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use View;
 
-class FonikController extends CognitoAuthController
+class HomeController extends CognitoAuthController
 {
     public function show()
     {
