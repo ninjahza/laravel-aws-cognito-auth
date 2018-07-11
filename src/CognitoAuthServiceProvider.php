@@ -11,7 +11,7 @@ class CognitoAuthServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/config/aws-cognito-auth.php' => config_path('aws-cognito-auth.php'),
-            __DIR__.'/views' => resource_path('views/auth'),
+            __DIR__.'/views' => resource_path('views'),
         ]);
         $this->registerGuard();
         $this->defineConstants();
