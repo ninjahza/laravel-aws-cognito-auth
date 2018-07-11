@@ -38,7 +38,10 @@ return [
     |
     */
 
-    'username-attribute' => 'email',
+    'user-attributes' => [
+        'email',
+        'phone_number'
+    ],
 
     /*
     |--------------------------------------------------------------------------

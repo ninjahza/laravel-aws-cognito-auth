@@ -1,5 +1,5 @@
 {
-  "name": "pallant/laravel-aws-cognito-auth",
+  "name": "endemol/awsCognitoAuth",
   "description": "An authentication driver for Laravel for authenticating users in AWS Cognito User Pools",
   "keywords": ["php", "laravel", "auth", "aws", "cognito"],
   "license": "MIT",
@@ -16,7 +16,15 @@
   },
   "autoload": {
     "psr-0": {
-      "Pallant\\LaravelAwsCognitoAuth": "src/"
+      "Endemol\\AwsCognitoAuth": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Endemol\\AwsCognitoAuth\\CognitoUserServiceProvider",
+        "Endemol\\AwsCognitoAuth\\CognitoAuthServiceProvider"
+      ]
     }
   }
 }

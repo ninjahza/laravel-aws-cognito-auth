@@ -1,6 +1,6 @@
 <?php
 
-namespace Pallant\LaravelAwsCognitoAuth;
+namespace Endemol\AwsCognitoAuth;
 
 use RuntimeException;
 
