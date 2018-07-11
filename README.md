@@ -29,19 +29,28 @@ This package makes use of the  [aws-sdk-php-laravel](https://github.com/aws/aws-
 
 ### Install
 
-Add `pallant/laravel-aws-cognito-auth` to `composer.json` and run `composer update` to pull down the latest version:
-
+Add `aws/aws-sdk-php-laravel` by running:
 ```
-"pallant/laravel-aws-cognito-auth": "~1.0"
-```
-
-Or use `composer require`:
-
-```
-composer require pallant/laravel-aws-cognito-auth
+composer require aws/aws-sdk-php-laravel
 ```
 
-Add the service provider and the [aws-sdk-php-laravel](https://github.com/aws/aws-sdk-php-laravel) service provider to the `providers` array in `config/app.php`.
+Add this repository to the repositories section of `composer.json`
+```
+"repositories": [
+  {
+    "type": "vcs",
+    "url":  "git@github.com:EndemolShineGroup/laravel-aws-cognito-auth.git"
+  }
+],
+```
+
+Add `endemol/awsCognitoAuth` by running:
+
+```
+composer require endemol/awsCognitoAuth
+```
+
+Add the service providers to the `providers` array in `config/app.php`.
 
 ```php
 'providers' => [
