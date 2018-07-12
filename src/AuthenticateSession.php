@@ -1,6 +1,6 @@
 <?php
 
-namespace Endemol\AwsCognitoAuth;
+namespace NinjahZA\AwsCognitoAuth;
 
 use Closure;
 use Illuminate\Contracts\Auth\Factory as AuthFactory;

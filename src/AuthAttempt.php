@@ -1,6 +1,6 @@
 <?php
 
-namespace Endemol\AwsCognitoAuth;
+namespace NinjahZA\AwsCognitoAuth;
 
 class AuthAttempt
 {

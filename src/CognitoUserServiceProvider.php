@@ -6,7 +6,7 @@
  * Time: 14:15
  */
 
-namespace Endemol\AwsCognitoAuth;
+namespace NinjahZA\AwsCognitoAuth;
 
 use Illuminate\Support\ServiceProvider as ServiceProvider;
 use Auth;

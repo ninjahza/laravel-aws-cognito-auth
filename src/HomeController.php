@@ -1,6 +1,6 @@
 <?php
 
-namespace Endemol\AwsCognitoAuth;
+namespace NinjahZA\AwsCognitoAuth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use View;
