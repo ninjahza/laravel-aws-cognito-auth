@@ -39,15 +39,15 @@ Add this repository to the repositories section of `composer.json`
 "repositories": [
   {
     "type": "vcs",
-    "url":  "git@github.com:EndemolShineGroup/laravel-aws-cognito-auth.git"
+    "url":  "git@github.com:ninjahza/laravel-aws-cognito-auth.git"
   }
 ],
 ```
 
-Add `endemol/awsCognitoAuth` by running:
+Add `ninjahza/laravel-aws-cognito-auth` by running:
 
 ```
-composer require endemol/awsCognitoAuth
+composer require ninjahza/laravel-aws-cognito-auth
 ```
 
 Add the service providers to the `providers` array in `config/app.php`.
@@ -56,19 +56,19 @@ Add the service providers to the `providers` array in `config/app.php`.
 'providers' => [
     ...
     Aws\Laravel\AwsServiceProvider::class,
-    Endemol\AwsCognitoAuth\CognitoUserServiceProvider::class,
-    Endemol\AwsCognitoAuth\CognitoAuthServiceProvider::class,
+    NinjahZA\AwsCognitoAuth\CognitoUserServiceProvider::class,
+    NinjahZA\AwsCognitoAuth\CognitoAuthServiceProvider::class,
     ...
 ]
 ````
 
-Open `app/Http/Kernel.php` and replace the default `\Illuminate\Session\Middleware\AuthenticateSession::class` middleware with `\Endemol\AwsCognitoAuth\AuthenticateSession::class,`.
+Open `app/Http/Kernel.php` and replace the default `\Illuminate\Session\Middleware\AuthenticateSession::class` middleware with `\NinjahZA\AwsCognitoAuth\AuthenticateSession::class,`.
 
 ```php
 protected $middlewareGroups = [
     'web' => [
         ...
-        \Endemol\AwsCognitoAuth\AuthenticateSession::class,
+        \NinjahZA\AwsCognitoAuth\AuthenticateSession::class,
         ...
     ],
 ];
@@ -77,7 +77,7 @@ protected $middlewareGroups = [
 Publish the config files and default views:
 
 ```
-php artisan vendor:publish --provider="Endemol\AwsCognitoAuth\CognitoAuthServiceProvider"
+php artisan vendor:publish --provider="NinjahZA\AwsCognitoAuth\CognitoAuthServiceProvider"
 php artisan vendor:publish --provider="Aws\Laravel\AwsServiceProvider"
 ```
 
@@ -136,7 +136,7 @@ Make your App/User.php class extend from CognitoUser, and add the attributes tha
 ```php
 namespace App;
 
-use Endemol\AwsCognitoAuth\CognitoUser;
+use NinjahZA\AwsCognitoAuth\CognitoUser;
 
 class User extends CognitoUser
 {
@@ -147,22 +147,22 @@ class User extends CognitoUser
 
 Add authentication routes to your `routes/web.php` file:
 ```php
-Route::get('/', '\Endemol\AwsCognitoAuth\HomeController@show');
-Route::get('/home', '\Endemol\AwsCognitoAuth\HomeController@show');
+Route::get('/', '\NinjahZA\AwsCognitoAuth\HomeController@show');
+Route::get('/home', '\NinjahZA\AwsCognitoAuth\HomeController@show');
 
 Auth::routes();
 
 Route::get('register', [
     'as' => 'register',
-    'uses' => '\Endemol\AwsCognitoAuth\CognitoRegisterController@showRegistrationForm'
+    'uses' => '\NinjahZA\AwsCognitoAuth\CognitoRegisterController@showRegistrationForm'
 ]);
 Route::post('register', [
     'as' => '',
-    'uses' => '\Endemol\AwsCognitoAuth\CognitoRegisterController@register'
+    'uses' => '\NinjahZA\AwsCognitoAuth\CognitoRegisterController@register'
 ]);
 
-Route::get('/verification', '\Endemol\AwsCognitoAuth\CognitoRegisterController@verification')->name('verification');
-Route::post('verify', '\Endemol\AwsCognitoAuth\CognitoRegisterController@verify')->name('verify');
+Route::get('/verification', '\NinjahZA\AwsCognitoAuth\CognitoRegisterController@verification')->name('verification');
+Route::post('verify', '\NinjahZA\AwsCognitoAuth\CognitoRegisterController@verify')->name('verify');
 ```
 
 Set `app\Http\Controllers\Auth\LoginController.php` to use username as username (By default laravel sets it to email). Add the following:
